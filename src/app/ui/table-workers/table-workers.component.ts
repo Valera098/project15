@@ -14,6 +14,7 @@ export class TableWorkersComponent implements OnInit {
   @Input() workers: MyWorker[] = [];
 
   public mask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+  nameFilter: string = '';
 
   @Output() deleteWorker = new EventEmitter<number>();
   @Output() editWorker = new EventEmitter<object>();

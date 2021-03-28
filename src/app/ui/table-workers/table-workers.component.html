@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-12">
       <h5>{{ title }}</h5>
+      <div class="col-4 d-flex">
+        <label >Поиск</label> <input type="text" class="form-control" [(ngModel)]="nameFilter">
+      </div>
       <table class="table">
         <thead>
         <tr>
@@ -14,7 +17,7 @@
         </tr>
         </thead>
         <tbody>
-        <ng-container *ngFor="let worker of workers">
+        <ng-container *ngFor="let worker of workers | nameFilter:nameFilter">
           <tr>
             <th scope="row">{{ worker.id }}</th>
             <td>{{ worker.name }}</td>
